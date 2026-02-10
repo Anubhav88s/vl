@@ -112,24 +112,24 @@ const Hero = () => {
       {/* Main Content */}
       <div className={`relative z-10 text-center px-6 max-w-4xl mx-auto transition-all duration-1000 ${showContent ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 mb-8 px-10 py-2 rounded-full glass animate-pulse-glow">
+        <div className="inline-flex items-center gap-2 mb-8 px-6 md:px-10 py-2 rounded-full glass animate-pulse-glow">
           <span className="text-lg">💌</span>
           <span className="text-sm font-medium tracking-[0.2em] uppercase text-pink-200">A Letter From My Heart</span>
         </div>
 
         {/* Title */}
         <h1 className="font-display mb-8">
-          <span className="block text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-2 leading-tight"
+          <span className="block text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white mb-2 leading-tight"
                 style={{ textShadow: '0 0 40px rgba(255,255,255,0.1)' }}>
             Every love story
           </span>
-          <span className="block text-5xl md:text-7xl lg:text-8xl font-bold text-pink-300/80 mb-2 leading-tight">
+          <span className="block text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-pink-300/80 mb-2 leading-tight">
             is beautiful,
           </span>
-          <span className="block text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-4 leading-tight">
+          <span className="block text-3xl md:text-5xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 leading-tight">
             but ours is my
           </span>
-          <span className="block text-6xl md:text-8xl lg:text-9xl font-bold gradient-text italic leading-tight">
+          <span className="block text-4xl md:text-6xl lg:text-8xl xl:text-9xl font-bold gradient-text italic leading-tight">
             favourite.
           </span>
         </h1>

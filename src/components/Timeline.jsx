@@ -10,6 +10,17 @@ const events = [
 const TimelineItem = ({ event, index, isLeft }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
+  const [padding, setPadding] = useState('24px');
+
+  useEffect(() => {
+    const updatePadding = () => {
+      setPadding(window.innerWidth < 768 ? '24px' : '40px');
+    };
+    
+    updatePadding();
+    window.addEventListener('resize', updatePadding);
+    return () => window.removeEventListener('resize', updatePadding);
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,7 +46,7 @@ const TimelineItem = ({ event, index, isLeft }) => {
               ? 'opacity-100 translate-x-0'
               : `opacity-0 ${isLeft ? '-translate-x-16' : 'translate-x-16'}`
           }`}
-          style={{ transitionDelay: `${index * 200}ms`, padding: '40px' }}
+          style={{ transitionDelay: `${index * 200}ms`, padding }}
         >
           <span className="text-pink-400 font-bold text-xs tracking-[0.3em] uppercase block mb-2">
             {event.date}

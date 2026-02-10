@@ -78,7 +78,7 @@ const LoveLetter = () => {
 
           {/* Letter */}
           <div
-            className={`glass p-8 md:p-12 transition-all duration-700 ${
+            className={`glass p-6 md:p-12 transition-all duration-700 ${
               isOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-80'
             }`}
             style={{

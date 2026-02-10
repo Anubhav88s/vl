@@ -106,7 +106,7 @@ const Proposal = () => {
 
       <div className={`relative z-10 w-full max-w-lg px-6 transition-all duration-1000 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
            style={{ minHeight: '400px' }}>
-        <div className="glass p-12 text-center animate-pulse-glow relative overflow-hidden">
+        <div className="glass p-6 md:p-12 text-center animate-pulse-glow relative overflow-hidden">
           {/* Shimmering border overlay */}
           <div className="absolute inset-0 rounded-3xl p-[1px] bg-gradient-to-r from-pink-500/50 via-purple-500/50 to-pink-500/50 animate-shimmer opacity-50 pointer-events-none"
                style={{ backgroundSize: '200% auto' }} />
@@ -121,10 +121,10 @@ const Proposal = () => {
               : "Please say yes... I made this whole website for you! 🥹"}
           </p>
 
-          <div className="flex justify-center items-center gap-6 relative" style={{ minHeight: '80px' }}>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 relative" style={{ minHeight: '80px' }}>
             <button
               onClick={handleYes}
-              className="px-10 py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold rounded-full shadow-2xl shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 text-xl z-10"
+              className="px-10 py-4 bg-gradient-to-r from-pink-500 to-red-500 text-white font-bold rounded-full shadow-2xl shadow-pink-500/30 hover:shadow-pink-500/50 transition-all duration-300 text-xl z-10 w-full md:w-auto"
               style={{
                 transform: `scale(${yesScale})`,
                 transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
@@ -137,7 +137,7 @@ const Proposal = () => {
               ref={noRef}
               onMouseEnter={handleNoHover}
               onClick={handleNoHover}
-              className="px-8 py-4 bg-gray-700/50 text-white rounded-full backdrop-blur text-lg transition-all duration-300 border border-white/10 hover:bg-gray-600/50 z-10"
+              className="px-8 py-4 bg-gray-700/50 text-white rounded-full backdrop-blur text-lg transition-all duration-300 border border-white/10 hover:bg-gray-600/50 z-10 w-full md:w-auto"
             >
               {noTexts[Math.min(noAttempts, noTexts.length - 1)]}
             </button>

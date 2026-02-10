@@ -23,6 +23,18 @@ const ReasonCard = ({ reason, index }) => {
     return () => observer.disconnect();
   }, []);
 
+  const [padding, setPadding] = useState('24px');
+
+  useEffect(() => {
+    const updatePadding = () => {
+      setPadding(window.innerWidth < 768 ? '24px' : '40px');
+    };
+    
+    updatePadding();
+    window.addEventListener('resize', updatePadding);
+    return () => window.removeEventListener('resize', updatePadding);
+  }, []);
+
   const handleMouseMove = (e) => {
     const rect = cardRef.current.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -53,7 +65,7 @@ const ReasonCard = ({ reason, index }) => {
 
       <div 
         className="relative glass glass-hover h-full transition-all duration-300 overflow-hidden flex flex-col items-start text-left"
-        style={{ padding: '40px' }}
+        style={{ padding }}
       >
         {/* Emoji */}
         <div 
@@ -75,7 +87,7 @@ const ReasonCard = ({ reason, index }) => {
         <p className="text-purple-200/80 leading-relaxed text-sm md:text-base break-words">
           {reason.desc}
         </p>
-
+        
         {/* Corner accent */}
         <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-pink-500/50 group-hover:bg-pink-400 group-hover:shadow-[0_0_10px_rgba(255,0,127,0.5)] transition-all duration-300" />
       </div>
